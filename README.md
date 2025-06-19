@@ -33,3 +33,6 @@ This project was created as part of the **Code2Connect Fellowship Challenge** by
    ```bash
    git clone https://github.com/nifelix97/expense-tracker.git
    cd expense-tracker
+
+2. this is link of project
+   https://nifelix97.github.io/expense-tracker/
