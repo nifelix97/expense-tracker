@@ -1,0 +1,253 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #3498db;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  line-height: 1.6;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.dark-theme {
+  background-color: #1a1a1a;
+  color: #f0f2f5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.dark-theme header h1 {
+  color: var(--light);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+#form-section {
+  background: white;
+  padding: 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.dark-theme #form-section {
+  background: #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 16px;
+}
+
+input, button {
+  padding: 12px 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.dark-theme input {
+  background: #3a3a3a;
+  border-color: #444;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.25);
+}
+
+button[type="submit"] {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: 600;
+}
+
+button[type="submit"]:hover {
+  background: #2980b9;
+}
+
+#summary-section {
+  background: white;
+  padding: 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.dark-theme #summary-section {
+  background: #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#summary-section h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.dark-theme #summary-section h2 {
+  color: var(--light);
+}
+
+#balance {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+#expenses-section {
+  background: white;
+  padding: 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.dark-theme #expenses-section {
+  background: #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#expenses-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: var(--border-radius);
+  background: #f8f9fa;
+  border-left: 5px solid;
+  transition: transform 0.2s;
+}
+
+.dark-theme .expense-item {
+  background: #3a3a3a;
+}
+
+.expense-item:hover {
+  transform: translateX(5px);
+}
+
+.income {
+  border-color: var(--success);
+}
+
+.expense {
+  border-color: var(--danger);
+}
+
+.expense-item span {
+  font-weight: 500;
+}
+
+.expense-item div {
+  display: flex;
+  gap: 8px;
+}
+
+.expense-item button {
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.expense-item button:first-child {
+  background: var(--secondary);
+  color: white;
+  border: none;
+}
+
+.expense-item button:last-child {
+  background: var(--danger);
+  color: white;
+  border: none;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #777;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.dark-theme footer {
+  color: #aaa;
+  border-top: 1px solid #444;
+}
+
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  button[type="submit"] {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 500px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+  
+  button[type="submit"] {
+    grid-column: span 1;
+  }
+  
+  .expense-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .expense-item div {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

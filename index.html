@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Expense Tracker</h1>
+  <button id="toggle-theme">Toggle Dark/Light Mode</button>
+  </header>
+
+  <main>
+    <section id="form-section">
+     <form id="expense-form">
+  <select id="type" required>
+    <option value="income">Income (+)</option>
+    <option value="expense">Expense (–)</option>
+  </select>
+  <input type="text" id="description" placeholder="Description" required />
+  <input type="number" id="amount" placeholder="Amount" required />
+  <input type="date" id="date" required />
+  <button type="submit">Add Transaction</button>
+</form>
+
+    </section>
+
+    <section id="summary-section">
+      <h2>Total Balance: <span id="balance">0</span> RWF</h2>
+    </section>
+
+    <section id="expenses-section">
+      <ul id="expenses-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>My Frontend Challenge</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
